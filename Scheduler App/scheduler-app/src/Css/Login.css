@@ -1,0 +1,189 @@
+
+.login-css{
+    height:70vh;
+    width:30vw;
+  }
+  
+  .options>*:hover{
+       background-color:  #394a55;
+       box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  }
+  .welcome-note{
+     color: #535c68;
+     font-size: 1.8rem;
+     height:5rem;
+  }
+  .Login-details{
+    margin-top: 3rem;
+    width: 100%;
+    height: calc(50vh - 5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .newUserEmail{
+    background-color: #f1f2f6;
+    outline: none;
+    border: 0.5px solid #535c68;
+    width: 20vw;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left:2rem;
+  }
+  .newUserPass{
+    background-color: #f1f2f6;
+    outline: none;
+    border: 0.5px solid #535c68;
+    width: 20vw;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left:2rem;
+  }
+  div>input[type=submit]{
+    margin-top: 4rem;
+  }
+  .login-btn{
+    width:10rem;
+    height:3rem;
+    border-bottom-left-radius: 4rem;
+    border-bottom-right-radius: 4rem;
+    border-top-right-radius: 4rem;
+    border-top-left-radius: 4rem;
+    background-color: #95afc0;
+    color: rgb(255, 255, 255);
+    outline: none;
+    border:none;
+    font-size: 1.3rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    cursor: pointer;
+  }
+  .login-btn:hover{
+    background-color:  #394a55;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  }
+  .Login-details>p{
+    font-size: 0.8rem;
+    text-decoration: underline;
+  }
+  .Login-details>div>span{
+    color:red;
+  }
+  .Email-cont{
+    position: relative;
+  }
+  .Email-cont>i{
+    position: absolute;
+    padding-right: 0.5rem;
+    left:0.3rem;
+    top:1.3rem;
+    color:#8f9aa8;
+  }
+  .Pass-cont{
+    position: relative;
+  }
+  .Pass-cont>i{
+    position: absolute;
+    padding-right: 0.5rem;
+    left:0.3rem;
+    top:1.3rem;
+    color:#8f9aa8;
+  }
+
+  .reset-pass-cont{
+    position:absolute;
+    top:1rem;
+    left:3.5rem;
+    width:100%;
+    display: flex;
+  }
+.checkAndReset-btn{
+  width:10rem;
+  height:3rem;
+  border-bottom-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+  background-color: #95afc0;
+  color: rgb(255, 255, 255);
+  outline: none;
+  border:none;
+  margin-left: 7rem;
+  font-size: 1.3rem;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  cursor: pointer;
+}
+.checkAndReset-btn:hover{
+  background-color:  #394a55;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.sendOTP{
+  width:10rem;
+  height:3rem;
+  border-bottom-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+  background-color: #95afc0;
+  color: rgb(255, 255, 255);
+  outline: none;
+  border:none;
+  font-size: 1.3rem;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  cursor: pointer;
+}
+.sendOTP:hover{
+  background-color:  #394a55;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+}
+
+.Reset{
+  /* position: relative;x`` */
+  width:10rem;
+  height:3rem;
+  border-bottom-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+  background-color: #95afc0;
+  color: rgb(255, 255, 255);
+  outline: none;
+  border:none;
+  position: relative;
+  bottom:3.5rem;
+  left:10rem;
+  font-size: 1.3rem;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  cursor: pointer;
+}
+.Reset:hover{
+  background-color:  #394a55;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+  @media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    
+
+
+}
+@media only screen and (max-width: 600px){
+	/*Big smartphones [426px -> 600px]*/
+}
+@media only screen and (max-width: 425px){
+	/*Small smartphones [325px -> 425px]*/
+}

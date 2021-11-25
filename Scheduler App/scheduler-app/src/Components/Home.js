@@ -1,0 +1,22 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import "../Css/Home.css";
+
+function Home() {
+  return (
+    <div>
+     
+      <div className="home-cont">
+        <div className="welcome-note">
+          <h3>Welcome to Class Scheduler!!</h3>
+        </div>
+        <div className="options">
+          <Link to="/student" className="student-btn"><span>As a Student</span></Link>
+          <Link to="/teacher"className="teacher-btn"><span>As a Teacher</span></Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Home;

@@ -1,0 +1,316 @@
+
+  .Settings-cnt{
+    position: fixed;
+    top:50%;
+    z-index:1;
+    /* overflow-y:scroll; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    height:calc(100vh- 30%);
+    /* height:calc( 100vh); */
+    background-color:#ffffff;
+    border-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  }
+  .setting-heading{
+    width:80%;
+    height:4rem;
+    margin-top:2rem;
+    position: fixed;
+    top:0.5rem;
+  }
+  .setting-heading>.back-button{
+    float: left;
+    margin-left: 3rem;
+    top:2rem;
+  }
+  .setting-heading>.back-button>i{
+    color:#e9eef3;
+  }
+  .setting-heading>.back-button>i:hover{
+    cursor: pointer;
+    color:#657688;
+  }
+  .setting-heading>.heading{
+      margin-left: 10rem;
+      font-size:1.5rem;
+  }
+  .setting-heading>hr{
+      margin-left: 15rem;
+      width:60%;
+      opacity:0.2;
+      height:0.2rem
+  }
+
+.change-pass-cont{
+    position:absolute;
+    top:5rem;
+    left:16rem;
+    width:100%;
+    display: flex;
+    
+}
+
+.head{
+  text-align: center;
+  font-size: 2rem;
+}
+.newPAss{
+  text-align: center;
+  margin:1rem;
+  padding: 1rem;
+}
+.oldPAss{
+  text-align: center;
+  margin:1rem;
+  padding: 1rem;
+}
+.confirmPAss{
+  text-align: center;
+  margin:1rem;
+  padding: 1rem;
+}
+.oldPAss>input{
+  background-color: #f1f2f6;
+  outline: none;
+  border: 0.5px solid #535c68;
+  width: 20vw;
+  padding: 12px 20px;
+  /* margin: 8px 0; */
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding-left:2rem;
+  margin-left: 0rem;
+  margin-right: 1rem;
+
+}
+.confirmPAss>input{
+  background-color: #f1f2f6;
+  outline: none;
+  border: 0.5px solid #535c68;
+  width: 20vw;
+  padding: 12px 20px;
+  /* margin: 8px 0; */
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding-left:2rem;
+  margin-left: 0rem;
+  margin-right: 1rem;
+
+}
+.newPAss>input{
+  background-color: #f1f2f6;
+  outline: none;
+  border: 0.5px solid #535c68;
+  width: 20vw;
+  padding: 12px 20px;
+  /* margin: 8px 0; */
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding-left:2rem;
+  margin-left: 0rem;
+  margin-right: 1rem;
+  
+}
+.change-pass-cont>form>div{
+  /* background-color:lawngreen */
+}
+.change{
+  /* position: relative;x`` */
+  width:10rem;
+  height:3rem;
+  border-bottom-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+  background-color: #95afc0;
+  color: rgb(255, 255, 255);
+  outline: none;
+  border:none;
+  position: relative;
+  bottom:2rem;
+  left:10rem;
+  font-size: 1.3rem;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  cursor: pointer;
+}
+
+.change:hover{
+  background-color:  #394a55;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.FAQs-cnt{
+  position: fixed;
+  top:50%;
+  z-index:1;
+  /* overflow-y:scroll; */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height:calc(100vh - 20%);
+  /* height:calc( 100vh); */
+  background-color:#ffffff;
+  border-radius: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.faq-heading{
+  width:80%;
+  height:4rem;
+  margin-top:2rem;
+  position: fixed;
+  top:0.5rem;
+}
+.faq-heading>.back-button{
+  float: left;
+  margin-left: 3rem;
+  top:2rem;
+}
+.faq-heading>.back-button>i{
+  color:#e9eef3;
+}
+.faq-heading>.back-button>i:hover{
+  cursor: pointer;
+  color:#657688;
+}
+.faq-heading>.heading{
+    margin-left: 10rem;
+    font-size:1.5rem;
+}
+.faq-heading>hr{
+    margin-left: 15rem;
+    width:60%;
+    opacity:0.2;
+    height:0.2rem
+}
+
+
+@media only screen and (max-width: 1200px){
+  /*Tablets [601px -> 1200px]*/
+  
+
+
+}
+@media only screen and (max-width: 600px){
+/*Big smartphones [426px -> 600px]*/
+}
+@media only screen and (max-width: 425px){
+/*Small smartphones [325px -> 425px]*/
+}
+.profile-info{
+  position: absolute;
+  top:7rem;
+  left:2rem;
+  right:2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap:2rem;
+  align-items: center;
+}
+.Edit-btn{
+  width:5rem;
+  height:3rem;
+  border-bottom-left-radius: 4rem;
+  border-bottom-right-radius: 4rem;
+  border-top-right-radius: 4rem;
+  border-top-left-radius: 4rem;
+  background-color: #95afc0;
+  color: rgb(255, 255, 255);
+  outline: none;
+  border:none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.3rem;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+  cursor: pointer;
+}
+.Edit-btn:hover{
+  background-color:  #394a55;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+}
+.user-email{
+  margin:1rem;
+}
+.user-email>label{
+
+  font-weight: bold;
+}
+.user-email>input{
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: #f1f2f6;
+    outline: none;
+    border: 0.5px solid #535c68;
+    width: 20vw;
+    padding: 12px 20px;
+    /* margin: 8px 0; */
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left:2rem;
+    margin-left: 0rem;
+    margin-right: 1rem;
+}
+.user-first-name{
+  margin:1rem;
+}
+.user-first-name>label{
+
+  font-weight: bold;
+}
+.profile-info>div>i:hover{
+cursor: pointer;
+}
+.user-first-name>input{
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: #f1f2f6;
+    outline: none;
+    border: 0.5px solid #535c68;
+    width: 20vw;
+    padding: 12px 20px;
+    /* margin: 8px 0; */
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left:2rem;
+    margin-right: 1rem;
+}
+.user-last-name{
+  
+  margin:1rem;
+}
+.user-last-name>label{
+
+  font-weight: bold;
+}
+.user-last-name>input{
+  cursor: not-allowed;
+  opacity: 0.5;
+  background-color: #f1f2f6;
+    outline: none;
+    border: 0.5px solid #535c68;
+    width: 20vw;
+    padding: 12px 20px;
+    /* margin: 8px 0; */
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding-left:2rem;
+    margin-right: 1rem;
+}
