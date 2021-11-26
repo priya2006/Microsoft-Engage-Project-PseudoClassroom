@@ -1,6 +1,8 @@
 import React from 'react'
 import "../Css/ProfileOptions.css";
 
+//this is the FAQ for the website if someone has issue whihc we have already answered here.
+
 function FAQ(props) {
     return (
         <div className="FAQs-cnt">

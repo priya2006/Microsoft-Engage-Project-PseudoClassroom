@@ -1,16 +1,39 @@
 import axios from 'axios';
 import React,{useState,useEffect} from 'react'
 import "../Css/TeacherDashboard.css"
-
 import CriteriaEachDay from './CriteriaEachDay';
 
+/*
+This component is for the Course of teacher to display on teacher's Dashboard.
+Rendered on TeacherDashboard.js
+*/
+
 function TeacherCourse(props) {
+    /*
+    State to handle whether teacher is looking to edit the criteria
+    */
     const [EditCriteria,setEditCriteria]=useState(false);
+    /*
+    State to handle whether teacher is looking to send a broadcast message to all the students in this course.
+    */
     const [IsBroadcast,setIsBroadcast]=useState(false);
+    /*
+    courseID taken as props from parent component 
+    */
     const id=props.courseId;
+    /*
+    check whether broadcast is sent or not
+    */
     const [IsSent,setIsSent]=useState(false);
+    /*
+    State to store Course details.
+    */
     const [course,setCourse]=useState(null);
 
+
+    /*
+    to perform some task at the time of first mounting of component which to fethc the course details for this particular course
+    */
     useEffect(() => {
         axios.get("http://localhost:4000/course/"+id)
         .then((res)=>{
@@ -23,15 +46,25 @@ function TeacherCourse(props) {
         })
     }) 
     
+    /*
+    Task to be perform upon submitting the broadcast message which to send this message as a notification to each student over there.
+    */
     async function OnSubmitBroadcast(e){
+       //Show user to wait untill message is sent 
       document.querySelector("body").style.cursor="wait";
 
+       //take message from text area
        const msg=document.getElementById("broadcast-message").value;
+
+       //Send them to all the students enrolled in this Course as a notifications.
         for(let idx=0;idx<course.Enrolledstudents.length;idx++){
             const student_id=course.Enrolledstudents[idx];
             console.log(student_id)
             let prevNotifications=[];
             const url= "http://localhost:4000/student/"+student_id;
+            /*
+            First fetch their old notifications add new one and then update the notifications
+            */
             await axios.get(url)
              .then((res)=>{
                 prevNotifications=res.data[0].notifications;
@@ -50,17 +83,16 @@ function TeacherCourse(props) {
              })
              
        }
+       //when once done proceed them without further waiting
       document.querySelector("body").style.cursor="default";
-      setIsSent(true);
+      setIsSent(true);//Mark message as sent 
        document.getElementById("broadcast-message").value="";
+
 
        setTimeout(() => {
               setIsSent(false);
               setIsBroadcast(!IsBroadcast);
         }, 2000);
-
-
-   
     }
      
     

@@ -13,6 +13,10 @@
   }
   .footer{
     margin : 0 auto; 
+    color: #a2a9b1;
+  }
+  .footer>*{
+    color:  #a2a9b1;
   }
 
 @media only screen and (max-width: 1200px){

@@ -2,9 +2,24 @@ import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 import "../Css/ProfileOptions.css"
 
+/*
+This component is used show the profile details of this user and allow them to edit those. 
+Rendered from Student/Teacher'sDashboard.js
+*/
+
 function Profile(props) {
+    /*
+    Store the user details in this state.
+    */
     const [userDetails,setUserDetails]=useState(null);
+    /*
+    Check if details are edited or not.
+    */
     const [Isedited,setIsedited]=useState(false);
+
+    /*
+    Edit the details after EDIT button is clicked.
+    */
 
     async function EditUserDetails(){
         const userEmail=document.getElementById("user-email");
@@ -21,6 +36,7 @@ function Profile(props) {
             setIsedited(false);
         }, 2000);
         
+        //Edit the details in DB.
         await axios.patch("http://localhost:4000/"+props.type+"/"+props.email,data)
         .then((res)=>{
             
@@ -41,7 +57,8 @@ function Profile(props) {
         userLName.opacity=0.5;
        
     }
-    console.log(userDetails);
+
+    //Fetch the user details in the first mounting of this component.
     useEffect(() => {
         axios.get("http://localhost:4000/"+props.type+"/"+props.email)
         .then((res)=>{
@@ -52,7 +69,6 @@ function Profile(props) {
         .catch((err)=>{
             console.log(err);
         })
-        console.log(userDetails);
         
     },[])
     
@@ -68,6 +84,9 @@ function Profile(props) {
                    <div  className="profile-info">
                        <div className="user-email">
                            <label for="email">Email:</label><br />
+                          
+                           {/* Cannot edit details untill the edit icon in not clicked */}
+
                            <input type="email" placeholder={userDetails.email}  name="email" className="email" id="user-email" /><i class="fas fa-pencil-alt" onClick={()=>{
                                const userEmail=document.getElementById("user-email");
                                document.querySelector(".email").style.cursor="default";

@@ -2,6 +2,8 @@ import React from "react";
 import {Link} from 'react-router-dom'
 import "../Css/Header.css";
 
+//Header of the website to show the title of App
+
 function Header() {
   return (
     <div className="header-cont">

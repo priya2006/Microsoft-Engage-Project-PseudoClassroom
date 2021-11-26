@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../Css/Home.css";
 
+//Home page of website so that user can select how to enter into the app like as a studentor as a teacher.
+
 function Home() {
   return (
     <div>

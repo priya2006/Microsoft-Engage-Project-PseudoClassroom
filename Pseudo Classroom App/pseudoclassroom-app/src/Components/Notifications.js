@@ -1,13 +1,26 @@
 import axios from 'axios'
-import React,{useEffect,useState} from 'react'
+import React,{useEffect} from 'react'
 import "../Css/StudentDashboard.css"
 
+/*
+This is the page to show notifications to the student if there is any 
+broadcast from any teacher of the courses in which astudent is enrolled
+
+This is rendered in StudentDashboard.js 
+
+ */
+
 function Notifications(props) {
+
+    //This to read all the notifications in the first mounting of this page.
+
     useEffect(() => {
+
+        //Taking notifications from the parent component which is StudentDashboard.js as props.
+
        for(let idx=0;idx<props.notifications.length;idx++){
            props.notifications[idx].read=true;
        }
-       console.log('notif props:',props.notifications);
        if(props){
            console.log(props);
             axios.patch("http://localhost:4000/student/"+props.email,{"notifications":props.notifications})
@@ -15,6 +28,7 @@ function Notifications(props) {
             .catch((err)=>console.log(err));
        }
     })
+
     return (
         <div className="Notifications-cnt">
              <div className="notification-heading">
@@ -24,6 +38,8 @@ function Notifications(props) {
             </div>    
             <div className="Notifications scrollbar-hidden">
                 {
+                    //Render all the notifications for this student.
+
                     props.notifications.map((notification,key)=>{
                         return (
                         <div className="notification">

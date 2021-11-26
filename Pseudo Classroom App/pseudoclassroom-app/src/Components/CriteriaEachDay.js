@@ -1,14 +1,18 @@
 import React,{useState,useEffect} from 'react'
 import "../Css/TeacherDashboard.css"
-import axios from 'axios'
+import axios from 'axios'//to fetch data or post data in DB or basically to communicate with DB.
+
+//This is for taking each day's Criteria from the teacher so it is rendered from TeacherCourse.js 
+
 
 function CriteriaEachDay(props) {
-    const [IsIn_Person,setOption]=useState(false);
-    const [IsAlreadyGiven,setIsAlreadyGiven]=useState(false);
+    const [IsIn_Person,setOption]=useState(false);//Check whether In-Person is selected or not
+    const [IsAlreadyGiven,setIsAlreadyGiven]=useState(false);//Check whether criteria is already given or not
      
     function submitCriteria(e){
         e.preventDefault();
         let Criteria={};
+        //maintain criteria given by teacher in the object
         if(IsIn_Person){
             Criteria["Option"]="In-Person";
             Criteria["vaccination-status"]=document.querySelector('select').value;
@@ -17,17 +21,16 @@ function CriteriaEachDay(props) {
         }else{
             Criteria["Option"]="Remote";
         }
-        console.log(Criteria);
-        console.log(props);
+
         let prevteacherPreferrenceCriteria=[];
+
+        //Update the criteria for the class of this day 
         axios.get("http://localhost:4000/course/"+props.course._id)
         .then((res)=>{
             console.log(res);
             if(res.data){
                 prevteacherPreferrenceCriteria=res.data.teacherPreferrenceCriteria;
-                console.log(props.course.teacherPreferrenceCriteria);
                 prevteacherPreferrenceCriteria[props.id]=Criteria;
-                console.log(prevteacherPreferrenceCriteria);
 
                 axios.patch("http://localhost:4000/course/"+props.course._id,{"teacherPreferrenceCriteria":prevteacherPreferrenceCriteria})
                 .then((res)=>console.log(res))
@@ -41,6 +44,7 @@ function CriteriaEachDay(props) {
 
         alert("Criteria sent for "+ props.day + " Class");
     }
+    //in the starting check whether Criteria  is already given or not 
     useEffect(() => {
         const prevteacherPreferrenceCriteria=props.course.teacherPreferrenceCriteria[props.id];
         if(Object.keys(prevteacherPreferrenceCriteria).length>0){
@@ -51,6 +55,7 @@ function CriteriaEachDay(props) {
     return (
         <div className="CriteriaForEachClass">
         {
+            //If already submitted then show this else the whole form to submit.
                 IsAlreadyGiven?
                 <fieldset className="day-preferrence">
                 <legend align="left">{props.day} Class</legend>
@@ -99,7 +104,6 @@ function CriteriaEachDay(props) {
                         <div className="PercentageOfStudents">
                             <div>% of Students you want in class:  </div>
                             <div className="input_percentage">
-                               { /* <!--number of students/2--> */}
                                <input type="number" className='NumStudents'  min="1" max="100" name="%OfStudents" />
                             </div>
                         </div>

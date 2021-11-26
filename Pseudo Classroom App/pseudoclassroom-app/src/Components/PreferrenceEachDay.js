@@ -1,21 +1,62 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 
+/*
+This is the component to take the prefereence from the students for each day's class of the course
+Hence,it is rendered from StudentCourse.js 
+*/
+
 function PreferrenceEachDay(props) {
+
+    //State are being handled here
+
+    /*
+    Check whether Teacher asked for preferrence which means if he/she set criteria for Remote class. 
+    Hence no preference is asked from student in that case.
+    */
     const [isPreferrenceAskedbyTeacher,setisPreferrenceAskedbyTeacher]=useState(true);
+  
+    /*
+    check whether class is Full or not for inPerson classes according to Criteria set by the teacher.     
+    */
     const [classFull,setClassFull]=useState(false);
+   
+    /*
+    check if student select In person option or not 
+    */
     const [IsIn_Person,setOption]=useState(false);
+
+    /*
+    Check is Criteria is  given by the teacher or not. If not, then can not take preferrence  from the students at this moment. 
+    */
     const [IsCriteriaGivenbyTeacher,setIsCriteriaGivenbyTeacher]=useState(true);
+
+    /*
+    Check if student has selected InPerson option for this class then if he/she satisfy the conditions or not setted by the teacher.
+    */
     const [IsAllowedAccordingtoConditions,setIsAllowedAccordingtoConditions]=useState(true);
+
+    /*
+    Check if Preferrence to be ask from the student or not
+    */
     const [isPreferrenceApplicable,setisPreferrenceApplicable]=useState(true)
+
+    /*
+    Check if preferrence is already given or not.
+    */
     const [IsAlreadyGiven,setIsAlreadyGiven]=useState(false);
 
-    const day_Num=props.id;
+    const day_Num=props.id;//store the day of the week whose preferrence is being asked
+
+    //Check conditions with teacher criteria after submitting the preferrence if student satisfy or not
+
     function submitPreferrence(e){
         e.preventDefault();
-       
+        
+        //Store teacher preferrence criteria
         let teacherPreferrence=props.course.teacherPreferrenceCriteria[day_Num];
         
+        //fetch the curr teacher Preferrence from the DB.
         axios.get("http://localhost:4000/course/"+props.course._id)
         .then((res)=>{
             console.log(res);
@@ -25,8 +66,16 @@ function PreferrenceEachDay(props) {
         })
         .catch((err)=>console.log(err));
 
+        //Maintain the student Preferrence 
+
         let Preferrence={};
-        let chkAllowed=true;
+        let chkAllowed=true;//mark if student allowed according to the criteria set by the teacher 
+
+        /*
+        IF in Person is requested  by the student then take the information given by the student and 
+        then check it with teacher's criteria to whether allowed or not
+        */
+
         if(IsIn_Person){
             Preferrence["Option"]="In-Person";
             Preferrence["vaccination-status"]=document.querySelector('select').value;
@@ -35,7 +84,6 @@ function PreferrenceEachDay(props) {
             else
             Preferrence["Parent's concern"]='no';
 
-            console.log(teacherPreferrence,Preferrence);
             if(Preferrence["vaccination-status"]==='Not'){
                 setIsAllowedAccordingtoConditions(false);
                 chkAllowed=false;
@@ -61,9 +109,10 @@ function PreferrenceEachDay(props) {
             setisPreferrenceApplicable(false);
         }
 
+        //If not allowed the show the student that he/she can attend the class remotely only
+
         if(!chkAllowed){
             Preferrence={"Option":"Remote"};
-            console.log(Preferrence);
             setisPreferrenceAskedbyTeacher(true);
             setIsCriteriaGivenbyTeacher(true);
             setisPreferrenceApplicable(false);
@@ -76,6 +125,8 @@ function PreferrenceEachDay(props) {
             setisPreferrenceApplicable(false);
         }
 
+        //Now at the end update the pereferrence in the DB according the conditions and preferrence given by the student.
+
         const WeeklyPreferrences=props.course.WeeklyPreferrences;
         WeeklyPreferrences[day_Num][props.studentId]=Preferrence;
 
@@ -84,21 +135,27 @@ function PreferrenceEachDay(props) {
         .catch((err)=>console.log(err));
         
         alert("Criteria sent for "+props.day + " Class");   
-        // if(chkAllowed)
-        // setIsAlreadyGiven(true);
+    
     }
     
-    
+    /*
+        Count the number of the students are allowed at this moment for the In person
+        to check the %of student set by teacher to attend in Person class.
+    */
 
     function countNumberofStudents(PreferrencesPermitted){
         let countNumber=0;
-        for (const [key, value] of Object.entries(PreferrencesPermitted)) {
+        for (const [, value] of Object.entries(PreferrencesPermitted)) {
             if(value["Option"]==="In-Person")   
             countNumber++;
         }
         return countNumber;
     }
     
+    /*
+    Check if Preferrence is already given by student and then show the  
+    submitted msg to the students.
+    */
     function CheckAndSetIfAlreadyPresentPreferrence(Currcourse){
         const isPresentPreferrence=Object.keys(Currcourse.WeeklyPreferrences[day_Num][props.studentId]).length>0;
         if(isPresentPreferrence){
@@ -108,29 +165,18 @@ function PreferrenceEachDay(props) {
             setIsCriteriaGivenbyTeacher(true);
             setisPreferrenceApplicable(false);
             setIsAllowedAccordingtoConditions(true);
-            // const PrevPreferrence=Currcourse.WeeklyPreferrences[day_Num][props.studentId];
-            // if(PrevPreferrence["Option"]==='Remote'){
-            //     document.getElementById('Remote').checked=true;
-            // }else{
-            //     document.getElementById('In-Person').checked=true;
-            //     setOption(true);
-            //     setClassFull(false);
-            //     const Vaccine_status=PrevPreferrence["vaccination-status"];
-            //     document.getElementById(Vaccine_status).selected=true;
-            //     const concern=PrevPreferrence["Parent's concern"];
-            //     document.getElementById(concern).checked=true;
-            // }
-            // document.getElementById('submit').value='Edit';
         }
     }
 
+    /*
+    Fetch Teacher's criteria and set states according to conditions.
+    */
     function checkTeacherPreferrence(){
         axios.get("http://localhost:4000/course/"+props.course._id)
         .then((res)=>{
             if(res.data){
                 console.log(res.data);
                 const Currcourse=res.data;
-                // console.log(Object.keys(Currcourse.teacherPreferrenceCriteria[props.id]).length);
                 if(Object.keys(Currcourse.teacherPreferrenceCriteria[day_Num]).length){
 
                     if(Currcourse.teacherPreferrenceCriteria[day_Num]["Option"]==='Remote'){
@@ -138,19 +184,18 @@ function PreferrenceEachDay(props) {
                     setisPreferrenceApplicable(false);
                     }
                     
-                    console.log(Currcourse,isPreferrenceAskedbyTeacher);
                     let PercentageOfStudents=parseInt(Currcourse.teacherPreferrenceCriteria[day_Num]["%ofstudents"]);
                     let numberOfStudentsAllowedIn_Person=Math.ceil((Currcourse.Enrolledstudents.length * PercentageOfStudents)/100);
                     let NumberofStudentsPermitted=countNumberofStudents(Currcourse.WeeklyPreferrences[day_Num]);
                     if(numberOfStudentsAllowedIn_Person===NumberofStudentsPermitted){
-                    setClassFull(true);
+                        setClassFull(true);
                     }
 
                 }else{
-                    setIsCriteriaGivenbyTeacher(false);
-                    setisPreferrenceApplicable(false);
+                        setIsCriteriaGivenbyTeacher(false);
+                        setisPreferrenceApplicable(false);
                 }
-                CheckAndSetIfAlreadyPresentPreferrence(Currcourse);
+                    CheckAndSetIfAlreadyPresentPreferrence(Currcourse);
             }
         })
         .catch((err)=>{
@@ -158,6 +203,8 @@ function PreferrenceEachDay(props) {
         })
         
     }
+
+    //The teacher criteria is checked int he starting or the first time when the component mounts.
     useEffect(() => {
         checkTeacherPreferrence();
     },[])
@@ -165,6 +212,8 @@ function PreferrenceEachDay(props) {
     return (
         <div className="PreferrenceForEachClass">
         {
+            //If pereferrence is not asked by the teacher.
+
           !isPreferrenceAskedbyTeacher&&
           <fieldset className="day-preferrence">
           <legend align="left">{props.day} Class</legend>
@@ -175,6 +224,8 @@ function PreferrenceEachDay(props) {
           </fieldset>
         }
         {
+            //If criteria is not set by the teacher for this day till now.
+
             !IsCriteriaGivenbyTeacher&&
             <fieldset className="day-preferrence">
           <legend align="left">{props.day} Class</legend>
@@ -185,6 +236,8 @@ function PreferrenceEachDay(props) {
           </fieldset>
         } 
         {
+            //If Preferrence is to be asked from the students then show him/her the form to fill preferrence.
+
             isPreferrenceApplicable&&
           <form onSubmit={submitPreferrence}>
               <fieldset className="day-preferrence">
@@ -203,6 +256,9 @@ function PreferrenceEachDay(props) {
                       </div>
                   </div>
                   { 
+                  /*
+                  If inperson is selected by the student but the class is full then show this to students
+                  */
                   IsIn_Person&&classFull&&   
                     <pre Style="font-size:0.8rem; color: rgb(218, 90, 90);;">
                         Sorry, no more seats available for In-person.<br />
@@ -210,6 +266,9 @@ function PreferrenceEachDay(props) {
                     </pre>
                  }
                  {
+                   /*
+                   If inperson is selected by the student but class is not full so show him/her the information form required.  
+                   */
                    IsIn_Person&&(!classFull)&& 
                    <div className='DetailsForInperson'>
                       <div Style="font-size:1.2rem;color:#657688;height:1rem;">Please, provide the following information also !</div>
@@ -244,6 +303,10 @@ function PreferrenceEachDay(props) {
           </form>
           }
           {
+              /*
+              If student is not allowed to take in person(if selected) according to the conditiions set by
+               the teacher and preferrence given by student.
+              */
               !IsAllowedAccordingtoConditions&&
               <fieldset className="day-preferrence">
               <legend align="left">{props.day} Class</legend>
@@ -254,6 +317,7 @@ function PreferrenceEachDay(props) {
               </fieldset>
           }
            {
+               //If student already given the preferrence 
               IsAlreadyGiven&&
               <fieldset className="day-preferrence">
               <legend align="left">{props.day} Class</legend>

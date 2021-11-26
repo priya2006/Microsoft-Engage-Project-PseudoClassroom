@@ -2,16 +2,32 @@ import axios from 'axios';
 import React,{useState} from 'react'
 import "../Css/ProfileOptions.css"
 
+/*
+This Component is used to change is user wishes to do that 
+Rendered from Student/Teacher's Dashboard.js
+*/
+
 function Settings(props) {
+
+    /*
+    Check is Password is updated.
+    */
     const [isupdated,setisupdated]=useState("");
 
+    /*
+    if user has entered the password and clicked the change button to change the password.
+    */
     function ChangePassword(e){
         e.preventDefault();
         const userEmail=props.email;
         const pass_old=document.getElementById('pass-old').value;
         const pass_new=document.getElementById('pass-new').value;
         const pass_confirm=document.getElementById('pass-confirm').value;
+
+        //If old password entered and is correct.
         if(pass_old===props.user.password){
+
+            //Now check the new password with confirm password whether they match or not and proceed only if they match.
             if(pass_new===pass_confirm){
                 axios.patch("http://localhost:4000/"+props.type+"/"+userEmail,{"password":pass_confirm})
                 .then((res)=>{
@@ -42,6 +58,7 @@ function Settings(props) {
                 <div  className="heading">Account Settings</div>
                 <hr />
                 <div className="change-pass-cont">
+                {/* Simple form to enter old, new and confirm the new password */}
                 <form  onSubmit={ChangePassword}>
                     <fieldset>
                     <legend className="head">Change your password</legend><br />
