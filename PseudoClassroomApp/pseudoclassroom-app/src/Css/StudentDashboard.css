@@ -1,6 +1,9 @@
 
   .Profile-cont{
-    position: relative;
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+    width: 22rem;
   }
   .Profile-name-btn{
     position: absolute;
