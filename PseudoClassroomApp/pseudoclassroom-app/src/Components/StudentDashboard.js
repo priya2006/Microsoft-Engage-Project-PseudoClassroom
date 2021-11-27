@@ -235,10 +235,12 @@ function StudentDashboard(props) {
             };
 
             const x = document.getElementById("notify-Note-Opening");
-            x.className = "show";
-                setTimeout(function(){
-                    x.className = x.className.replace("show", "");
-            }, 5000);
+            if(x){
+                x.className = "show";
+                    setTimeout(function(){
+                        x.className = x.className.replace("show", "");
+                }, 5000);
+            }
 
         }else{
             /*
@@ -294,10 +296,12 @@ function StudentDashboard(props) {
                 return false;
             };
             const x = document.getElementById("notify-Note-Opening");
+            if(x){
                 x.className = "show";
                 setTimeout(function(){
                     x.className = x.className.replace("show", "");
-            }, 5000);
+                }, 5000);
+            }
         }
 
         
