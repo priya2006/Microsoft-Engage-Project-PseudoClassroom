@@ -9,6 +9,7 @@
     width: 40vw;
     height:calc(100vh- 30%);
     /* height:calc( 100vh); */
+    overflow: scroll;
     background-color:#ffffff;
     border-radius: 2rem;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -37,7 +38,7 @@
       font-size:1.5rem;
   }
   .setting-heading>hr{
-      margin-left: 15rem;
+      margin-left: 5rem;
       width:60%;
       opacity:0.2;
       height:0.2rem
@@ -46,7 +47,7 @@
 .change-pass-cont{
     position:absolute;
     top:5rem;
-    left:16rem;
+    left:10rem;
     width:100%;
     display: flex;
     
@@ -216,6 +217,10 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: absolute;
+  right:2rem;
+  bottom: 0rem;
+
   font-size: 1.3rem;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   cursor: pointer;

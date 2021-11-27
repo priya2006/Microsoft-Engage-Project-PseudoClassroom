@@ -81,7 +81,7 @@ function Profile(props) {
             </div>
                {
                    userDetails!==null?
-                   <div  className="profile-info">
+                   <div  className="profile-info ">
                        <div className="user-email">
                            <label for="email">Email:</label><br />
                           

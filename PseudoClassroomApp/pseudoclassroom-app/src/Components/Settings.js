@@ -52,7 +52,7 @@ function Settings(props) {
     }
 
     return (
-        <div className="Settings-cnt">
+        <div className="Settings-cnt scrollbar-hidden">
              <div className="setting-heading">
                 <div className="back-button" onClick={()=>{props.setIsSettingsbyProp()}}><i class="fas fa-arrow-circle-left fa-2x"></i></div>
                 <div  className="heading">Account Settings</div>
