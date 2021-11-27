@@ -29,10 +29,7 @@ database.once("open",() =>{
 });
 
 
-app.get('/*', (req, res) => {
 
-  res.sendFile(path.join(__dirname+'/PseudoClassroomApp/pseudoclassroom-app/build/index.html'));
-});
 
 //Router fetches from their to for further 
 const StudentRouter = require('./routes/StudentRoute')
@@ -43,6 +40,11 @@ const CourseRouter = require('./routes/CourseRoute')
 app.use('/student',StudentRouter)
 app.use('/course', CourseRouter);
 app.use('/teacher', TeacherRouter);
+
+app.get('/*', (req, res) => {
+
+  res.sendFile(path.join(__dirname+'/PseudoClassroomApp/pseudoclassroom-app/build/index.html'));
+});
 
 /* App is now listening on 4000*/
 app.listen(port,()=>{
