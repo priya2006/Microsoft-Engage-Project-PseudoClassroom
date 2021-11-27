@@ -63,7 +63,7 @@ function StudentCourse(props) {
            <div className="Preferrence-cont scrollbar-hidden">
                 <div className="class-heading">
                 <div className="back-button" onClick={()=> setPreferrence(!isPreferrence)}><i class="fas fa-arrow-circle-left fa-2x"></i></div>
-                <div Style="font-size:1.5rem;" className="heading">Preferrences for Course Name</div>
+                <div  className="heading">Preferrences for {course.courseId}</div>
                 <hr Style="width:60%; opacity:0.2;height:0.2rem" />
                 </div>
                 <div className="Preferrences scrollbar-hidden ">

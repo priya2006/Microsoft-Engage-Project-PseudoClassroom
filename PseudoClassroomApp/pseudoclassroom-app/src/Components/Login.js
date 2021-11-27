@@ -22,8 +22,6 @@ function Login(props) {
      //Functions to perform tasks upon submitting credentials
      function OnSubmitCredentials(e){
         e.preventDefault();
-        document.querySelector("body").style.cursor="wait";
-        document.querySelector(".login-btn").style.cursor="wait";
          const email=document.querySelector("input[type='email']").value;
          const pass=document.querySelector("input[type='password']").value;
          console.log(user);
@@ -47,8 +45,6 @@ function Login(props) {
                         localStorage.setItem("User",student.email);
                         localStorage.setItem("type","student");
                         console.log("student",student);
-                        document.querySelector("body").style.cursor="default";
-                        document.querySelector(".login-btn").style.cursor="default";
                         console.log(user);
                     }else{
                         changeError("Incorrect Password!!")
@@ -74,8 +70,6 @@ function Login(props) {
                         changeIsNoUser(false);
                         localStorage.setItem("type","teacher");
                         setUser(teacher);
-                        document.querySelector("body").style.cursor="default";
-                        document.querySelector(".login-btn").style.cursor="default";
                         
                     }else{
                         changeError("Incorrect Password!!")
@@ -153,13 +147,13 @@ function Login(props) {
             <form className="Login-details" onSubmit={OnSubmitCredentials}>
                 <div className="Email-cont">
                     <i class="fa fa-envelope icon"></i>
-                    <input type="email" className="newUserEmail" placeholder="Enter Email" />
+                    <input type="email" className="newUserEmail" placeholder="Enter Email" required/>
                 </div>  
                 <div className="Pass-cont">
                     <i class="fa fa-key icon"></i>
-                    <input type="password" className="newUserPass"  placeholder="Enter Password" /><br />
-                    <span>{Error}</span>
+                    <input type="password" className="newUserPass"  placeholder="Enter Password" required  />
                 </div>
+                <div Style="color:red;">{Error}</div>
                 <div className="login-btn-cont"><input type="submit" value="Login"className="login-btn" />
                 <Link to='/resetPassword' Style="color:#666b72" className="forgotPass">Forget Password?</Link></div>
             </form>
@@ -169,7 +163,7 @@ function Login(props) {
         isTeacher?
         <TeacherDashboard teacher={user}/>:
         <div>
-            Something went wrong!!, Please try again later! 
+            <div className="loader profile-info"></div>
         </div>
 
         }

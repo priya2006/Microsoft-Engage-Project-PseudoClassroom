@@ -41,9 +41,9 @@ app.use('/student',StudentRouter)
 app.use('/course', CourseRouter);
 app.use('/teacher', TeacherRouter);
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/PseudoClassroomApp/pseudoclassroom-app/build/index.html'));
-});
+// app.get('/*', (req, res) => {
+//   res.sendFile(path.join(__dirname+'/PseudoClassroomApp/pseudoclassroom-app/build/index.html'));
+// });
 
 /* App is now listening on 4000*/
 app.listen(port,()=>{

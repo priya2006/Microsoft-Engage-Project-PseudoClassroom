@@ -308,12 +308,12 @@ function StudentDashboard(props) {
         //Template for the Sticky Note
         let stickyNoteTemplate=
                 `<div class="header-Sticky-cont">
-                <div class="title" contenteditable="true" spellcheck="false"></div>
+                <div class="title" contenteditable="true" spellcheck="false">Title</div>
                 <div class="minimize"><i class="fas fa-window-minimize MinimizeIcon"></i></div>
                 <div class="remove"><i class="fa fa-times" aria-hidden="true"></i></div>
                 </div>
                 <div class="note-cont">
-                    <textarea spellcheck="false" ></textarea>
+                    <textarea spellcheck="false" placeholder="Type Notes"></textarea>
                     </div>
                 `;
 
@@ -356,7 +356,7 @@ function StudentDashboard(props) {
                   </div>  
                   {
                   onProfileBtn &&    
-                  <div className="Profile-box">
+                  <div className="Profile-box scrollbar-hidden">
                      <h2>{student.firstName+' '+student.lastName}<br /><p Style="font-size:1rem;">Student</p><hr /></h2> 
                      <div onClick={()=>{
 
@@ -443,19 +443,19 @@ function StudentDashboard(props) {
               <div className="StickyNote"><img src="StickyNote.svg" className="Notes" title="Sticky Notes" alt="Sticky" onClick={()=>{
                   let stickyNoteTemplate = `
                   <div class="header-Sticky-cont">
-                      <div class="title" contenteditable="true" spellcheck="false"></div>
+                      <div class="title" contenteditable="true" spellcheck="false">Title</div>
                       <div class="minimize"><i class="fas fa-window-minimize MinimizeIcon"></i></div>
                       <div class="remove"><i class="fa fa-times" aria-hidden="true"></i></div>
                   </div>
                   <div class="note-cont">
-                      <textarea spellcheck="false" ></textarea>
+                      <textarea spellcheck="false" placeholder="Type Notes"></textarea>
                   </div>
                   `;
                   createStickyNote(stickyNoteTemplate);
               }}/></div>
         </div>:
         <div>
-            <h3>Something went Wrong. Please try again later!!!</h3>
+          <div className="loader profile-info"></div>
         </div>
     )
 }

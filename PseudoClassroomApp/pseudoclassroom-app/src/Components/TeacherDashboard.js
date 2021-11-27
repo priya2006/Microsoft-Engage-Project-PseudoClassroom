@@ -60,7 +60,7 @@ function TeacherDashboard(props) {
                   </div>  
                   {
                   onProfileBtn &&    
-                  <div className="Profile-box">
+                  <div className="Profile-box scrollbar-hidden">
                      <h2>{props.teacher.firstName+' '+props.teacher.lastName}<br /><p Style="font-size:1rem;">Teacher</p><hr /></h2> 
                      <div onClick={()=>{
                          

@@ -62,7 +62,7 @@ function WhiteBoard(props) {
 
         //If canvs element is setted now set tool over that canvas which means getting the context of canvas.
         if(canvas){
-            canvas.width=1700;
+            canvas.width=1800;
             canvas.height=700;   
             setTool(canvas.getContext('2d'));
             /*
@@ -95,7 +95,7 @@ function WhiteBoard(props) {
         if(tool){
                 mouseDown = true;
                 tool.beginPath();//Begin the  path on canvas
-                tool.moveTo(e.clientX.offsetLeft-50, e.clientY.offsetTop-100);//move  to the next location pointed by user.
+                tool.moveTo(e.clientX.offsetLeft, e.clientY.offsetTop);//move  to the next location pointed by user.
         }
     }
     /*
@@ -125,8 +125,8 @@ function WhiteBoard(props) {
             Color of pencil(if eraser it is white), width of stroke accoridng to pencil or eraser.
             */
             let data = {
-                x: e.clientX-canvas.offsetLeft-50,
-                y: e.clientY-canvas.offsetTop-100,
+                x: e.clientX-canvas.offsetLeft,
+                y: e.clientY-canvas.offsetTop,
                 color: !isPencil ? eraserColor : Pencilcolor,
                 width: !isPencil? EraserWidth : Pencilwidth
             }

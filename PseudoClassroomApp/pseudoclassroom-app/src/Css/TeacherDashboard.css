@@ -8,7 +8,7 @@
   .Profile-name-btn{
     position: absolute;
     right:1.3rem;
-    top:0rem;
+    top:-0.4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,11 +21,10 @@
   .Profile-btn{
     color: #ffffff;
     border-radius: 50%;
-    width:3vw;
-    height:6vh;
+    top:0rem;
     background-color:#697d94 ;
     text-align: center;
-    font-size:xx-large;
+    font-size:large;
     padding-top:0.4rem;
     cursor: pointer;
     border: 0.1rem solid #ffffff;
@@ -43,11 +42,12 @@
     z-index:3;
     top:3.5rem;
     right:1.5rem;
+    overflow: scroll;
     background-color: #d1d8e0;
     display: flex;
     flex-direction: column;
-    width:15vw;
-    height: 50vh;
+    width:25vw;
+    height: 70vh;
     border-radius: 0.4rem;
     padding: 0.8rem;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -112,7 +112,7 @@
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    width: 90vw;
+    width: 95vw;
     height:calc( 100vh - 20%);
     background-color:#ffffff;
     border-radius: 2rem;
@@ -149,14 +149,14 @@
 } */
 .tools-cont {
   display: flex;
-  height: 75%;
+  height: 80%;
   width: 4vw;
   background-color: #f1f2f6;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   position: absolute;
-  top: 8rem;
+  top: 6rem;
   left: 1vw;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -174,7 +174,7 @@
 }
 .tools-cont > * {
   display: block;
-  width: 4rem;
+  width: 3rem;
 }
 .pencil-tool-cont {
   background-color: #f1f2f6;
@@ -182,8 +182,8 @@
   height: 5rem;
   width: 7rem;
   position: absolute;
-  top: 7.5rem;
-  left: -5vw;
+  top: 8rem;
+  left: 2vw;
   border-radius: 3px;
 }
 .pencil-width-cont {
@@ -224,8 +224,8 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 15rem;
-  left: -4.2vw;
+  top: 13rem;
+  left: 2vw;
 }
 .eraser-tool-cont input {
   width: 90%;
@@ -240,13 +240,13 @@
   border-radius: 2rem;
   left:8rem;
   top:0.8rem;
-  width: 83vw;
+  width: 86vw;
   height:calc( 100vh - 28.5%);
 }
 
 img {
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
 }
 img:hover{
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -416,8 +416,8 @@ img:hover{
   }
   .Courses-cont{
     background-color:#f0f3f7;
-    top:4rem;
-    bottom:3rem;
+    top:3rem;
+    bottom:2rem;
     position: absolute;
     display: flex;
     flex-wrap: wrap;
@@ -433,7 +433,7 @@ img:hover{
     /* border:0.1rem solid #b8c0c9 ; */
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
     width: 22vw;
-    height: 40vh;
+    height: 50vh;
     border-radius: 1rem;
     margin-bottom: 1rem;
     margin-right: 2rem;
@@ -447,12 +447,12 @@ img:hover{
     background-color:#e5e9ee ;
   }
   .teacherCourse-cont>button{
-    margin-top:2rem;
+    margin-top:1rem;
     height: 4rem; 
     outline: none;
     border:none;
     cursor: pointer;
-    width:40%;
+    width:80%;
     color:#4c5663;
     font-size:1.3rem;
     border-radius: 2rem;
@@ -698,7 +698,27 @@ img:hover{
   justify-content: center;
   color:#656a72;
 }
-
+.loader {
+  left:20rem;
+  border: 3px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 3px solid #3498db;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+.profile-info{
+  position: absolute;
+  top:7rem;
+  left:2rem;
+  right:2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap:2rem;
+  align-items: center;
+}
 
 
 @media only screen and (max-width: 1200px){
@@ -712,4 +732,85 @@ img:hover{
 }
 @media only screen and (max-width: 425px){
 /*Small smartphones [325px -> 425px]*/
+
 }
+@media only screen and (max-width: 424px){
+  /*Small smartphones [325px -> 425px]*/
+  .Profile-name-btn{
+    right: 0.5rem;
+    top:-0.4rem
+  }
+  .Profile-btn{
+    width:10vw;
+    height:6vh;
+    text-align: center;
+    font-size: small;
+  }
+  .Profile-box{
+    width:80vw;
+    height: 80vh;
+  }
+  .Course-cont{
+    height:50vh;
+    width:100vw;
+  }
+  .Profile{
+    z-index: 5;
+    width: 95vw;
+    overflow: scroll;
+  }
+  .profile-heading>hr{
+ margin-left:2rem;
+ width:100%
+  }
+  .notification-heading>hr{
+    margin-left:2rem;
+    width:100%
+     }
+     .setting-heading>hr{
+      margin-left:2rem;
+      width:100%
+       }
+  .user-email{
+    width:80%;
+  }
+  .user-email>input{
+    width: 100%;
+  }
+  .user-first-name{
+    width:80%;
+  }
+  .user-first-name>input {
+    width: 100%;
+  }
+  .user-last-name{
+    width:80%;
+  }
+  .user-last-name>input {
+    width: 100%;
+  }
+
+  .Notifications-cnt{
+    z-index: 5;
+    overflow: scroll;
+    width: 95vw;
+  }
+  .change-pass-cnt{
+    left: 2rem;
+  }
+  .Settings-cnt{
+    z-index: 5;
+    width: 95vw;
+  }
+  .FAQs-cnt{
+    z-index: 5;
+    width: 95vw;
+  }
+  .class-heading>.heading{
+    font-size: 1.2rem;
+  }
+  .class-heading>hr{
+    margin-left: 3rem;
+    width:90%;
+  }
+  }

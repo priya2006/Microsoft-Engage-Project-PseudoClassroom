@@ -155,7 +155,7 @@ function ForgotPassword() {
                     <div className="newPAss">New Password:<br /><input type="password" name="new"  id="pass-new" placeholder="Type here.."/></div>
                     <div className="confirmPAss">Confirm Password:<br /><input type="password" name="confirm"  id='pass-confirm' placeholder="Type here.."/></div>
                     <div Style="font-size:1.1rem;color:red;text-align:center;">{isupdated} </div>
-                    <div><input type="submit" name="change"  value="Change" className="Reset"/></div>
+                    <div><input type="submit" name="change"  value="Reset" className="Reset"/></div>
             </form>
         </div>  
         }
