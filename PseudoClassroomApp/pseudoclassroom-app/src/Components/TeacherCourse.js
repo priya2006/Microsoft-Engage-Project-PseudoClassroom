@@ -35,7 +35,7 @@ function TeacherCourse(props) {
     to perform some task at the time of first mounting of component which to fethc the course details for this particular course
     */
     useEffect(() => {
-        axios.get("http://localhost:4000/course/"+id)
+        axios.get("/course/"+id)
         .then((res)=>{
             if(res.data){
                 setCourse(res.data);
@@ -61,7 +61,7 @@ function TeacherCourse(props) {
             const student_id=course.Enrolledstudents[idx];
             console.log(student_id)
             let prevNotifications=[];
-            const url= "http://localhost:4000/student/"+student_id;
+            const url= "/student/"+student_id;
             /*
             First fetch their old notifications add new one and then update the notifications
             */

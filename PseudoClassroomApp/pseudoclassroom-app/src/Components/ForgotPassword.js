@@ -22,12 +22,12 @@ function ForgotPassword() {
         //check whether this email exist in DB or not.
 
         //for student 
-        await axios.get("http://localhost:4000/student/"+email)
+        await axios.get("/student/"+email)
         .then(async(res)=>{
             console.log(res);
             if(res.data.length){
                 //If present then send the mail to this email of unique 4-digit OTP
-                await axios.post("http://localhost:4000/student/resetPassOTP",{"email":res.data[0].email,"firstName":res.data[0].firstName})
+                await axios.post("/student/resetPassOTP",{"email":res.data[0].email,"firstName":res.data[0].firstName})
                 .then((res)=>{
                     console.log("Open this to see the OTP in console to move forward",res);
                     setotp(res.data);
@@ -48,13 +48,13 @@ function ForgotPassword() {
 
             //If email is not sent means student is  not there then send to teacher 
 
-                await axios.get("http://localhost:4000/teacher/"+email)
+                await axios.get("/teacher/"+email)
             .then( async (res)=>{
                 if(res.data.length){
 
                     //Send the OTP now
 
-                     await axios.post("http://localhost:4000/teacher/resetPassOTP",{"email":email,"firstName":res.data[0].firstName})
+                     await axios.post("/teacher/resetPassOTP",{"email":email,"firstName":res.data[0].firstName})
                     .then((res)=>{
                         console.log("Open this to see the OTP in console to move forward",res);
                         setotp(res.data)
@@ -100,7 +100,7 @@ function ForgotPassword() {
                 
                 //If new Password entered matches with conform password then only update the Password
 
-                axios.patch("http://localhost:4000/"+typeUser+"/"+userEmail,{"password":pass_confirm})
+                axios.patch("/"+typeUser+"/"+userEmail,{"password":pass_confirm})
                 .then((res)=>{
                     console.log("Password updated successfully!!");
                 })

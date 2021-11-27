@@ -38,14 +38,14 @@ function CriteriaEachDay(props) {
         let prevteacherPreferrenceCriteria=[];
 
         //Update the criteria for the class of this day 
-        axios.get("http://localhost:4000/course/"+props.course._id)
+        axios.get("/course/"+props.course._id)
         .then((res)=>{
             console.log(res);
             if(res.data){
                 prevteacherPreferrenceCriteria=res.data.teacherPreferrenceCriteria;
                 prevteacherPreferrenceCriteria[props.id]=Criteria;
 
-                axios.patch("http://localhost:4000/course/"+props.course._id,{"teacherPreferrenceCriteria":prevteacherPreferrenceCriteria})
+                axios.patch("/course/"+props.course._id,{"teacherPreferrenceCriteria":prevteacherPreferrenceCriteria})
                 .then((res)=>console.log(res))
                 .catch((err)=>console.log(err))
              setIsAlreadyGiven(true);
@@ -63,7 +63,7 @@ function CriteriaEachDay(props) {
     */
     async function getNameOfStudent(email){
         let Name=""
-       await axios.get("http://localhost:4000/student/"+email)
+       await axios.get("/student/"+email)
         .then((res)=>{
             if(res.data.length){
                 // console.log(res.data)

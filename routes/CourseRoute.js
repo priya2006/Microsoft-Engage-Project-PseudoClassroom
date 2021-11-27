@@ -14,7 +14,7 @@ router.route('/').post((req,res)=>{
 });
 
 //get all the courses
-router.route('/').get((req,res)=>{
+router.route('/allCourses').get((req,res)=>{
     
     Course.find()
     .then(courses=>res.json(courses))

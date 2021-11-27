@@ -37,7 +37,7 @@ function Profile(props) {
         }, 2000);
         
         //Edit the details in DB.
-        await axios.patch("http://localhost:4000/"+props.type+"/"+props.email,data)
+        await axios.patch("/"+props.type+"/"+props.email,data)
         .then((res)=>{
             
             console.log(res)
@@ -60,7 +60,7 @@ function Profile(props) {
 
     //Fetch the user details in the first mounting of this component.
     useEffect(() => {
-        axios.get("http://localhost:4000/"+props.type+"/"+props.email)
+        axios.get("/"+props.type+"/"+props.email)
         .then((res)=>{
             if(res.data.length){
                 setUserDetails(res.data[0]);

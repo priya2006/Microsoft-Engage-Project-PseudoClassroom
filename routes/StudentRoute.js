@@ -15,7 +15,7 @@ router.route('/').post((req,res)=>{
 })
 
 //getting details of all students
-router.route('/').get((req,res)=>{
+router.route('/allStudents').get((req,res)=>{
     Student.find()
     .then(students => res.json(students))
     .catch(err => res.status(400).json('Error'+err))

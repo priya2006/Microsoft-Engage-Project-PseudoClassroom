@@ -23,7 +23,7 @@ function Notifications(props) {
        }
        if(props){
            console.log(props);
-            axios.patch("http://localhost:4000/student/"+props.email,{"notifications":props.notifications})
+            axios.patch("/student/"+props.email,{"notifications":props.notifications})
             .then((res)=>console.log("Done"))
             .catch((err)=>console.log(err));
        }

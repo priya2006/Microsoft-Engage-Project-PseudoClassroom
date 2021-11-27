@@ -29,7 +29,7 @@ function Settings(props) {
 
             //Now check the new password with confirm password whether they match or not and proceed only if they match.
             if(pass_new===pass_confirm){
-                axios.patch("http://localhost:4000/"+props.type+"/"+userEmail,{"password":pass_confirm})
+                axios.patch("/"+props.type+"/"+userEmail,{"password":pass_confirm})
                 .then((res)=>{
                     console.log("Password updated successfully!!");
                 })

@@ -57,7 +57,7 @@ function PreferrenceEachDay(props) {
         let teacherPreferrence=props.course.teacherPreferrenceCriteria[day_Num];
         
         //fetch the curr teacher Preferrence from the DB.
-        axios.get("http://localhost:4000/course/"+props.course._id)
+        axios.get("/course/"+props.course._id)
         .then((res)=>{
             console.log(res);
             if(res.data){
@@ -130,7 +130,7 @@ function PreferrenceEachDay(props) {
         const WeeklyPreferrences=props.course.WeeklyPreferrences;
         WeeklyPreferrences[day_Num][props.studentId]=Preferrence;
 
-        axios.patch("http://localhost:4000/course/"+props.course._id,{"WeeklyPreferrences": WeeklyPreferrences})
+        axios.patch("/course/"+props.course._id,{"WeeklyPreferrences": WeeklyPreferrences})
         .then((res)=>console.log("Preferrence added successfully",res))
         .catch((err)=>console.log(err));
         
@@ -172,7 +172,7 @@ function PreferrenceEachDay(props) {
     Fetch Teacher's criteria and set states according to conditions.
     */
     function checkTeacherPreferrence(){
-        axios.get("http://localhost:4000/course/"+props.course._id)
+        axios.get("/course/"+props.course._id)
         .then((res)=>{
             if(res.data){
                 console.log(res.data);

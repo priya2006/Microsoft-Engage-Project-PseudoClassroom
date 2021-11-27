@@ -23,14 +23,14 @@ function StudentCourse(props) {
     //Store the details for this course first time of mounting of this component in course state to use in for further component;
 
      useEffect(() => {
-         axios.get("http://localhost:4000/course/"+id)
+         axios.get("/course/"+id)
         .then((res)=>{
             if(res){
                 console.log("res:",res)
                 setCourse(res.data);
                 if(res.data){
                     //when you get course now fetch the teacher details of that course from DB to use it.
-                    axios.get("http://localhost:4000/teacher/"+res.data.teacherId)
+                    axios.get("/teacher/"+res.data.teacherId)
                     .then((res)=>{
                         if(res){
                             console.log("res tea",res)
