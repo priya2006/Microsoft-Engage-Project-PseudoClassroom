@@ -1,5 +1,5 @@
 {
-  "name": "scdeuler-app",
+  "name": "pseudoclassroom-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,6 +39,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"http://localhost:4000"
-
+  "proxy": "http://localhost:4000"
 }
