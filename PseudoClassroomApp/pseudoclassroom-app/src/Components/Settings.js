@@ -57,17 +57,17 @@ function Settings(props) {
                 <div className="back-button" onClick={()=>{props.setIsSettingsbyProp()}}><i class="fas fa-arrow-circle-left fa-2x"></i></div>
                 <div  className="heading">Account Settings</div>
                 <hr />
+                <div Style="font-size:0.8rem;color:red;text-align:center;">{isupdated}</div>
                 <div className="change-pass-cont">
                 {/* Simple form to enter old, new and confirm the new password */}
+                
                 <form  onSubmit={ChangePassword}>
-                    <fieldset>
-                    <legend className="head">Change your password</legend><br />
-                    <div className="oldPAss">old Password:<br /><input type="password" name="old"  id="pass-old" placeholder="Type here.."/></div>
-                    <div className="newPAss">New Password:<br /><input type="password" name="new"  id="pass-new" placeholder="Type here.."/></div>
-                    <div className="confirmPAss">Confirm Password:<br /><input type="password" name="confirm"  id='pass-confirm' placeholder="Type here.."/></div>
-                    <div Style="font-size:1.1rem;color:red;text-align:center;">{isupdated}</div>
+                    <div className="head">Change your Password!!</div><br />
+                    <div className="oldPAss">old Password:&nbsp;<input type="password" name="old"  id="pass-old" placeholder="Type here.."/></div>
+                    <div className="newPAss">New Password:&nbsp;<input type="password" name="new"  id="pass-new" placeholder="Type here.."/></div>
+                    <div className="confirmPAss">Confirm Password:&nbsp;<input type="password" name="confirm"  id='pass-confirm' placeholder="Type here.."/></div>
+                   
                     <div><input type="submit" name="change"  value="Change" className="change"/></div>
-                    </fieldset>
                 </form>
                 </div>
             </div>    

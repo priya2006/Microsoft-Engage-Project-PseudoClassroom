@@ -181,7 +181,7 @@
   outline: none;
   border:none;
   position: absolute;
-  bottom:0rem;
+  top :0rem;
   right:6rem;
   font-size: 1.3rem;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
