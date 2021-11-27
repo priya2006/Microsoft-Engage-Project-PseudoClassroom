@@ -34,6 +34,7 @@ function Login(props) {
              axios.get("/student/"+email)
             .then((res)=>{
                 if(res.data.length>0){
+                    console.log(res);
                     const student=res.data[0];
                     if(student.password===pass){
                         changeisStudent(true);
