@@ -6,13 +6,13 @@ import Student from './Components/Student';
 import Teacher from './Components/Teacher';
 import ForgotPassword from './Components/ForgotPassword';
 import Home from './Components/Home';
-import {BrowserRouter as Router, Routes ,Route} from 'react-router-dom';
+import {HashRouter, Routes ,Route} from 'react-router-dom';
 import StudentDashboard from './Components/StudentDashboard';
 import TeacherDashboard from './Components/TeacherDashboard';
 
 function App() {
   return (
-    <Router className="App">
+    <HashRouter className="App">
       <Header />
         <Routes >
         <Route path="/" exact element={<Home />} />
@@ -21,7 +21,7 @@ function App() {
         <Route path="/resetPassword" element={<ForgotPassword />} />
         </Routes>
       <Footer />
-    </Router>
+    </HashRouter>
   );
 }
 
