@@ -106,7 +106,7 @@ function ForgotPassword() {
                 })
                 .catch((err)=>console.log(err));
             
-                setisupdated("Password updated successfully!!");
+                setisupdated("Password updated successfully!! Use Home to re-Login");
             }else{
                 setisupdated("Password do not match. Try again!!")
             }
@@ -154,7 +154,7 @@ function ForgotPassword() {
                     </div>
                     <div className="newPAss">New Password:<br /><input type="password" name="new"  id="pass-new" placeholder="Type here.."/></div>
                     <div className="confirmPAss">Confirm Password:<br /><input type="password" name="confirm"  id='pass-confirm' placeholder="Type here.."/></div>
-                    <div Style="font-size:1.1rem;color:red;text-align:center;">{isupdated} Use home to re-login</div>
+                    <div Style="font-size:1.1rem;color:red;text-align:center;">{isupdated} </div>
                     <div><input type="submit" name="change"  value="Change" className="Reset"/></div>
             </form>
         </div>  
