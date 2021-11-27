@@ -132,9 +132,7 @@ function Profile(props) {
                            Edit 
                        </div>
                    </div>:
-                   <pre  className="profile-info">
-                       Fetching profile details.....
-                   </pre>
+                   <div class="loader"></div>
                }
            </div>
     )
