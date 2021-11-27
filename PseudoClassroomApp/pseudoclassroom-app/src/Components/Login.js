@@ -160,8 +160,8 @@ function Login(props) {
                     <input type="password" className="newUserPass"  placeholder="Enter Password" /><br />
                     <span>{Error}</span>
                 </div>
-                <div><input type="submit" value="Login"className="login-btn" /></div>
-                <Link to='/resetPassword' Style="color:#666b72">Forget Password?</Link>
+                <div className="login-btn-cont"><input type="submit" value="Login"className="login-btn" />
+                <Link to='/resetPassword' Style="color:#666b72" className="forgotPass">Forget Password?</Link></div>
             </form>
         </div>:
         isStudent?

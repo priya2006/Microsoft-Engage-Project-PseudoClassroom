@@ -1,14 +1,14 @@
 
 .footer-cont{
     position:fixed;
-    top: calc(100vh - 3rem);
-    height: 3rem;
+    top: calc(100vh - 2rem);
+    height: 2rem;
     width:100vw;
     bottom: 0rem;
     background-color:#57606f;
     display: flex;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
     color:#a2a9b1;
   }
   .footer{
@@ -30,4 +30,7 @@
 }
 @media only screen and (max-width: 425px){
 	/*Small smartphones [325px -> 425px]*/
+  .footer{
+    justify-items: center;
+  }
 }

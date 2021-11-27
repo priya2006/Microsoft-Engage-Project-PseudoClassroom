@@ -1,4 +1,9 @@
 
+.login-css{
+  height:50%;
+  width:60%;
+}
+
 .home-cont{
     background-color:#f1f2f6;
     position: fixed;
@@ -8,8 +13,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width:30vw;
-    height:50vh;
+    width:40%;
+    height:55%;
     border-radius: 3%;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
   }
@@ -23,7 +28,7 @@
     height: 100%; 
   }
   .options>*{
-    width:12rem;
+    width:10rem;
     height:4rem;
     border-bottom-left-radius: 4rem;
     border-bottom-right-radius: 4rem;
@@ -50,7 +55,7 @@
 }
 .welcome-note{
   color: #535c68;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   height:5rem;
 }
   .welcome-note{
@@ -58,11 +63,11 @@
     justify-content: center;
   }
 
-  @media only screen and (max-width: 1200px){
+  @media only screen and (max-width: 1250px){
     /*Tablets [601px -> 1200px]*/
     .home-cont{
-      width: 80vw;
-      height:40vh;
+      width: 60%;
+      height:50%;
     }
 
 }
@@ -74,7 +79,7 @@
     height:50vh;
   }
   .welcome-note{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     text-align: center;
     justify-content: center;
   }

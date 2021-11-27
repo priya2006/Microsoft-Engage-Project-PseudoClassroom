@@ -1,7 +1,7 @@
 .header-cont{
     background-color: #57606f;  
     width :100vw;
-    height : 4rem;
+    height : 3rem;
     display:flex;
     flex-direction: row;
     justify-content: space-between ;
@@ -12,11 +12,10 @@
   .header-cont > *{
     margin-left:1rem;
     position: absolute;
-    left:40rem;
+    left:20rem;
     margin-top:0.5rem ;
     color:#ebeef1;
-    font-size: xx-large;
-    font-weight: bold;
+    font-size: x-large;
     text-decoration: none;
   }
   .heading-home{
@@ -25,8 +24,7 @@
     left:1rem;
     margin-top:0.5rem ;
     color:#ebeef1;
-    font-size: xx-large;
-    font-weight: bold;
+    font-size: x-large;
     text-decoration: none; 
   }
   .heading-home:hover{
@@ -38,12 +36,22 @@
 
   @media only screen and (max-width: 1200px){
     /*Tablets [601px -> 1200px]*/
-    
-
+    .header-cont > *{
+      left:10rem;
+    }
+    .heading-home{
+      left:1rem;
+    }
 
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 700px){
 	/*Big smartphones [426px -> 600px]*/
+  .header-cont>*{
+    display: none;
+  }
+  .heading-home{
+    display: flex;
+  }
 }
 @media only screen and (max-width: 425px){
 	/*Small smartphones [325px -> 425px]*/

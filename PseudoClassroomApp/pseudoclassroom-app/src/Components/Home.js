@@ -10,7 +10,7 @@ function Home() {
      
       <div className="home-cont">
         <div className="welcome-note">
-          <h3>Welcome to Class Scheduler!!</h3>
+          <h3>Welcome to Pseudo Classroom!!</h3>
         </div>
         <div className="options">
           <Link to="/student" className="student-btn"><span>As a Student</span></Link>
