@@ -3,6 +3,7 @@ const express = require('express')
 const app = express();
 const mongoose=require('mongoose')
 const cors=require('cors');
+const path = require('path');
 const nodemailer=require('nodemailer');
 const env=require('dotenv')
 
@@ -13,7 +14,7 @@ const port = process.env.PORT||4000;
 
 app.use(cors());//for having access to request any server and get request from any server
 app.use(express.json());//convert in json format
-
+app.use(express.static(path.join(__dirname, 'Pseudo Classroom App/pseudoclassroom-app/build')));
 //Taking the URl to connect  with my MongoDB's Cloud database 
 const Uri=process.env.ATLAS_URI;
 
