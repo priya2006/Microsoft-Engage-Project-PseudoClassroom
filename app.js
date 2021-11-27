@@ -30,6 +30,7 @@ database.once("open",() =>{
 
 
 app.get('/*', (req, res) => {
+  
   res.sendFile(path.join(__dirname+'/PseudoClassroomApp/pseudoclassroom-app/build/index.html'));
 });
 

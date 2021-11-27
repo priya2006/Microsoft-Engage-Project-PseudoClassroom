@@ -7,8 +7,6 @@ import Teacher from './Components/Teacher';
 import ForgotPassword from './Components/ForgotPassword';
 import Home from './Components/Home';
 import {BrowserRouter as Router, Routes ,Route} from 'react-router-dom';
-import StudentDashboard from './Components/StudentDashboard';
-import TeacherDashboard from './Components/TeacherDashboard';
 
 function App() {
   return (
