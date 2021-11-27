@@ -647,14 +647,14 @@ img:hover{
     /* overflow-y:scroll; */
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    min-height:calc( 100vh - 40%);
+    width: 70vw;
+    min-height:calc( 100vh - 30%);
     background-color:#ffffff;
     border-radius: 2rem;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 .message-cont{
-    width:80%;
+    width:70%;
     position: absolute; 
     top:7rem;
     left:5.5rem;
@@ -676,7 +676,7 @@ img:hover{
 .send-broadcast{
     position: absolute;
     bottom:3rem;
-    right:5rem;
+    right:2rem;
     height:3rem;
     width:5rem;
     color:#5e656e;

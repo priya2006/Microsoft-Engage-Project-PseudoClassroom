@@ -125,8 +125,7 @@
     left: 10rem;
     transform: translate(-50%, -50%);
     width: 50vw;
-    height:calc(100vh - 20%);
-    /* height:calc( 100vh); */
+    height:calc(100vh - 10%);
     background-color:#ffffff;
     border-radius: 2rem;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -171,8 +170,7 @@
     justify-content: space-evenly;
     padding: 2rem;
     overflow-y:scroll ;
-    width:100%
-   
+    width:100%;
   }
   .scrollbar-hidden::-webkit-scrollbar {
     display: none;
@@ -205,7 +203,7 @@
     color:#4c5663;
     font-size:1.3rem;
     border-radius: 2rem;
-     background-color: #cbcfd4;
+    background-color: #cbcfd4;
   }
   .Course-cont>button:hover{
     background-color:#cbd5e0  ;
@@ -399,7 +397,7 @@
   top:7rem;
   left:0rem;
   right:3rem;   
-  bottom:2rem;
+  bottom:1rem;
   overflow-y:scroll;
   margin-top:1rem;
   display: flex;
@@ -516,7 +514,47 @@ textarea {
   resize: none;
   font-size: large;
 }
+#notify-Note-Opening {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  bottom: 30px;
+  font-size: 17px;
+}
 
+#notify-Note-Opening.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
 
 @media only screen and (max-width: 1200px){
   /*Tablets [601px -> 1200px]*/

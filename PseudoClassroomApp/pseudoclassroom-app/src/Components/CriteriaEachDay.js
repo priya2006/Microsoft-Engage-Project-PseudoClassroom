@@ -58,22 +58,7 @@ function CriteriaEachDay(props) {
         alert("Criteria sent for "+ props.day + " Class");
     }
     
-    /*
-    function to fetch student's name using email.
-    */
-    async function getNameOfStudent(email){
-        let Name=""
-       await axios.get("/student/"+email)
-        .then((res)=>{
-            if(res.data.length){
-                // console.log(res.data)
-                Name=res.data[0]["firstName"]+" "+res.data[0]["lastName"];
-            }
-        })
-        .catch((err)=>console.log(err))
-
-        return Name;
-    }
+    
     
     /*
     Function to fetch students of two diff category remote or in-person
@@ -95,33 +80,24 @@ function CriteriaEachDay(props) {
 
         for(const Studentemail in AllPreferrences){
             const Preferrence=AllPreferrences[Studentemail];
-            let StudentName;
-
-            //fetching the Student name using their EmailId from the DB.
-            await getNameOfStudent(Studentemail)
-            .then((res)=>{
-                StudentName=res;
-            })
-            .catch((err)=>console.log(err));
 
             /*
             Adding in RemoteStudents if student is attending remotely else in InPerson.
             */
             if(Preferrence["Option"]==="Remote"){
                 const CurrStudents=RemoteStudents;
-                if(!CurrStudents.find((name)=>{return name===StudentName})){
-                    CurrStudents.push(StudentName);
+                if(!CurrStudents.find((name)=>{return name===Studentemail})){
+                    CurrStudents.push(Studentemail);
                     setRemoteStudents(CurrStudents);
                 }
             }else if(Preferrence["Option"]==="In-Person"){
                 const CurrStudents=InPersonStudents;
-                if(!CurrStudents.find((name)=>{return name===StudentName})){
-                    CurrStudents.push(StudentName);
+                if(!CurrStudents.find((name)=>{return name===Studentemail})){
+                    CurrStudents.push(Studentemail);
                     setInPersonStudents(CurrStudents);
                 }
             }
         }
-       
     }
 
 
@@ -162,7 +138,7 @@ function CriteriaEachDay(props) {
                 //Display the table contains students attending remotely and in-person
                     !IsclassRemote&&
                 <div  className="Students-record">    
-                    <table border="1" cellpadding="3" width="80%" height="100%">
+                   <table border="1" cellpadding="3" width="80%" height="100%">
                         <tbody>
                             <tr>
                             <th>Remote</th>

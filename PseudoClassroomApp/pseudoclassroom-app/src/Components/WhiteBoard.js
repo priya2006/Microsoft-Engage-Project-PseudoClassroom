@@ -72,6 +72,7 @@ function WhiteBoard(props) {
             if(tool){
                 tool.strokeStyle=!isPencil ? eraserColor : Pencilcolor;
                 tool.lineWidth= !isPencil? EraserWidth : Pencilwidth;
+                tool.linecap="round";
             }
 
             /*
@@ -95,7 +96,7 @@ function WhiteBoard(props) {
         if(tool){
                 mouseDown = true;
                 tool.beginPath();//Begin the  path on canvas
-                tool.moveTo(e.clientX.offsetLeft, e.clientY.offsetTop);//move  to the next location pointed by user.
+                tool.moveTo(e.clientX-canvas.offsetLeft, e.clientY-canvas.offsetTop);//move  to the next location pointed by user.
         }
     }
     /*
@@ -268,7 +269,7 @@ function WhiteBoard(props) {
                 */
                 ShowEraserOptions&&
             <div className="eraser-tool-cont">
-                <input type="range" min="2" max="20" value={EraserWidth} className="eraser-width" onChange={(e)=>{
+                <input type="range" min="7" max="30" value={EraserWidth} className="eraser-width" onChange={(e)=>{
                     setIsPencil(false);
                     setEraserWidth(e.target.value)
                     }}/>

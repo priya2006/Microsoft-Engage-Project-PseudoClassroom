@@ -233,7 +233,12 @@ function StudentDashboard(props) {
             stickyNotes.ondragstart = function () {
                 return false;
             };
-            
+
+            const x = document.getElementById("notify-Note-Opening");
+            x.className = "show";
+                setTimeout(function(){
+                    x.className = x.className.replace("show", "");
+            }, 5000);
 
         }else{
             /*
@@ -288,7 +293,14 @@ function StudentDashboard(props) {
             stickyNotes.ondragstart = function () {
                 return false;
             };
+            const x = document.getElementById("notify-Note-Opening");
+                x.className = "show";
+                setTimeout(function(){
+                    x.className = x.className.replace("show", "");
+            }, 5000);
         }
+
+        
 
     }
     /*
@@ -453,6 +465,7 @@ function StudentDashboard(props) {
                   `;
                   createStickyNote(stickyNoteTemplate);
               }}/></div>
+              <div id="notify-Note-Opening">Note has opened <br />Please Drag and drop to have better experience..</div>
         </div>:
         <div>
           <div className="loader profile-info"></div>

@@ -127,7 +127,7 @@ function TeacherDashboard(props) {
                 }
         </div>:
          <div>
-            <h2>Something went wrong, Please try again later!!!</h2>
+             <div className="loader profile-info"></div>
         </div>
        
     )

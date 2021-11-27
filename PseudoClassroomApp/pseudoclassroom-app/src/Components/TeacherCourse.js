@@ -53,6 +53,8 @@ function TeacherCourse(props) {
        //Show user to wait untill message is sent 
       document.querySelector("body").style.cursor="wait";
 
+      setIsSent(true);
+
        //take message from text area
        const msg=document.getElementById("broadcast-message").value;
 
@@ -135,7 +137,7 @@ function TeacherCourse(props) {
                 <div className="broadcast-cont">
                     <div className="class-heading">
                     <div className="back-button" onClick={()=> setIsBroadcast(!IsBroadcast)}><i class="fas fa-arrow-circle-left fa-2x"></i></div>
-                    <div Style="font-size:1.5rem;" className="heading">Send a broadcast message to all students of this course!</div>
+                    <div Style="font-size:1rem;" className="heading">Send a broadcast message to all students of this course!</div>
                     <hr Style="opacity:0.2;height:0.2rem;width:88%;margin-left:8rem;" />
                     </div>
                     <div className="message-cont  ">
@@ -144,8 +146,10 @@ function TeacherCourse(props) {
                         IsSent&&
                         <div Style="color:red;">Your Broadcast message has been sent to all students!!</div>
                     }
+                   
                     </div>
                     <div ><input type="submit"  className="send-broadcast" value="Send" onClick={OnSubmitBroadcast} /></div>
+                    
                 </div>
             }
         </div>:
