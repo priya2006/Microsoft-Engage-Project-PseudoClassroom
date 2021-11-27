@@ -31,7 +31,7 @@ function Login(props) {
          //If user is student search in Student DB.
 
          if(props.TypeUser==="Student"){
-             axios.get("http://localhost:4000/student/"+email)
+             axios.get("/student/"+email)
             .then((res)=>{
                 if(res.data.length>0){
                     const student=res.data[0];
@@ -63,7 +63,7 @@ function Login(props) {
             //If type of the user is teacher,search in teacher DB
 
 
-            axios.get("http://localhost:4000/teacher/"+email)
+            axios.get("/teacher/"+email)
             .then((res)=>{
                 if(res.data.length>0){
                     const teacher=res.data[0]
@@ -94,7 +94,7 @@ function Login(props) {
     /* If student is there fetch student details */
 
     async function getStudent(email){
-        await axios.get("http://localhost:4000/student/"+email)
+        await axios.get("/student/"+email)
             .then((res)=>{
                 if(res.data.length>0){
                     const student=res.data[0];
@@ -106,7 +106,7 @@ function Login(props) {
 
     /*If Teacher is there fetch teacher details */
     async function getTeacher(email){
-        await axios.get("http://localhost:4000/teacher/"+email)
+        await axios.get("/teacher/"+email)
         .then((res)=>{
             if(res.data.length>0){
                 const teacher=res.data[0]
