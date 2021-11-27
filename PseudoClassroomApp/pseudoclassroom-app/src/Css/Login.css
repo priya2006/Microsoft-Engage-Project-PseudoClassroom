@@ -170,7 +170,7 @@
 
 .Reset{
   /* position: relative;x`` */
-  width:10rem;
+  width:8rem;
   height:3rem;
   border-bottom-left-radius: 4rem;
   border-bottom-right-radius: 4rem;
@@ -180,10 +180,9 @@
   color: rgb(255, 255, 255);
   outline: none;
   border:none;
-  position: relative;
-  bottom:3.5rem;
-  left:10rem;
-  top:2rem;
+  position: absolute;
+  bottom:0rem;
+  right:6rem;
   font-size: 1.3rem;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   cursor: pointer;
