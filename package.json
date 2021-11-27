@@ -6,9 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start":"node app.js",
-    "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
-    "heroku-postbuild": "echo This runs after Heroku installs dependencies, but before Heroku prunes and caches dependencies.",
-    "heroku-cleanup": "echo This runs after Heroku prunes and caches dependencies."
+    "heroku-postbuild": "cd scdeuler-app && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
