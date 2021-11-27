@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname, 'cd PseudoClassroomApp/pseudoclassro
 //Taking the URl to connect  with my MongoDB's Cloud database 
 const Uri=process.env.ATLAS_URI;
 
+
 //Connecting with DB using mongoose 
 mongoose.connect(Uri);
 
@@ -25,6 +26,11 @@ const database = mongoose.connection;
 database.on("error", console.error.bind(console, "Database Connection error:"));
 database.once("open",() =>{
   console.log("Database Connected successfully");
+});
+
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/PseudoClassroomApp/pseudoclassroom-app/build/index.html'));
 });
 
 //Router fetches from their to for further 
