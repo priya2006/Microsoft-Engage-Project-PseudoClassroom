@@ -14,7 +14,7 @@ const port = process.env.PORT||4000;
 
 app.use(cors());//for having access to request any server and get request from any server
 app.use(express.json());//convert in json format
-app.use(express.static(path.join(__dirname, 'cd PseudoClassroomApp/pseudoclassroom-app/build')));
+app.use(express.static(path.join(__dirname, 'PseudoClassroomApp/pseudoclassroom-app/build')));
 //Taking the URl to connect  with my MongoDB's Cloud database 
 const Uri=process.env.ATLAS_URI;
 
@@ -30,7 +30,7 @@ database.once("open",() =>{
 
 
 app.get('/*', (req, res) => {
-  
+
   res.sendFile(path.join(__dirname+'/PseudoClassroomApp/pseudoclassroom-app/build/index.html'));
 });
 
