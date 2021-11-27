@@ -1,6 +1,4 @@
 import React,{useState,useEffect} from 'react'
-import Header from "./Header";
-import Footer from "./Footer";
 import StudentCourse from './StudentCourse';
 import Profile from './Profile';
 import Notifications from './Notifications';
@@ -69,7 +67,7 @@ function StudentDashboard(props) {
         }
     }
     /*
-    funtion to perform the funtioning of minimize and remove of Stickynotes
+    function to perform the funtioning of minimize and remove of Stickynotes
     */
     function minimizeAndRemove(minimize, remove, stickyNotes){
         /*

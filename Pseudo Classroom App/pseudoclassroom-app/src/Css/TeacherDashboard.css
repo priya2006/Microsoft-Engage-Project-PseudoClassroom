@@ -689,6 +689,12 @@ img:hover{
     color:#ffffff;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
+.Students-record{
+  display: flex;
+  font-size: 1.4rem;
+  justify-content: center;
+  color:#656a72;
+}
 
 
 

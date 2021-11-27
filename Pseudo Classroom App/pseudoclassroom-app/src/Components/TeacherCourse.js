@@ -44,7 +44,7 @@ function TeacherCourse(props) {
         .catch((err)=>{
             console.log(err);
         })
-    }) 
+    },[]) 
     
     /*
     Task to be perform upon submitting the broadcast message which to send this message as a notification to each student over there.
@@ -118,7 +118,6 @@ function TeacherCourse(props) {
                    {
                    course.Weekdays.length?
                    course.Weekdays.map((day,index) => {
-                       console.log(index);
                        return (
                         <CriteriaEachDay id={index} course={course} day={day}/>
                        )

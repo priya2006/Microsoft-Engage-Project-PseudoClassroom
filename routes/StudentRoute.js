@@ -3,44 +3,54 @@ const Student = require('../models/StudentModel')
 const  nodemailer=require('nodemailer');
 const axios=require('axios')
 
-// console.log("oiuyfg");
+// setting functionality to set routes
 
+//Post student details 
 router.route('/').post((req,res)=>{
     const studentEntry=req.body;
     const newEntry=new Student (studentEntry);
-    //  console.log(studentEntry);
     newEntry.save()
     .then(()=>res.json('Student added successfully!!'))
     .catch((err) => res.status(400).json('Cannot enter Entry as' + err ));
 })
 
+//getting details of all students
 router.route('/').get((req,res)=>{
     Student.find()
     .then(students => res.json(students))
     .catch(err => res.status(400).json('Error'+err))
 })
+
+//Fetching the student data using email given in params.
 router.route('/:email').get((req,res)=>{
     const Email=req.params.email;
-// console.log(req.params);
+
     Student.find({email:Email})
     .then(student=>res.json(student))
     .catch(err => res.status(400).json('Error' + err))
 })
 
-
+/*
+Reseting the Password of the student by sending OTP to their
+ mail given in body of request
+*/
 router.route('/resetPassOTP').post(async(req,res)=>{
     const email=req.body.email;
     const OTP=Math.floor(Math.random() * (9999 -1000) + 1000);
     try{
+        /*
+        using nodemailer for sending the OTP through mail.
+        */
     const transport=nodemailer.createTransport({
-    host: "smtp.gmail.com",
+    host: "smtp.gmail.com", //Protocol using for sending mail is SMTP
     port: 587,
-    secure: false, // true for 465, false for other ports
+    secure: false, 
     auth: {
-      user:" classscheduler.engageproject@gmail.com", // generated ethereal user
-      pass: 'nmdebziiuzeawshv', // generated ethereal password
+      user:" classscheduler.engageproject@gmail.com", // generated mail
+      pass: 'nmdebziiuzeawshv', // generated password for that mail for this transportation
     },
    }) 
+   //Sending the mail from us to user mail
     await transport.sendMail({
        from:'classscheduler.engageproject@gmail.com',
        to:email,
@@ -59,7 +69,9 @@ router.route('/resetPassOTP').post(async(req,res)=>{
    }
 })
 
-
+/*
+Updating the data of student with email given in params
+*/
 router.route('/:email').patch((req,res)=>{
     const Email=req.params.email;
     const data=req.body;
@@ -72,6 +84,9 @@ router.route('/:email').patch((req,res)=>{
     .catch(err=>res.status(500).json("Error" + err))
 })
 
+/*
+Fetching the data of the student with unique id.
+*/
 router.route('/:id').get((req,res)=>{
     const id=req.params.id
 
@@ -84,13 +99,3 @@ router.route('/:id').get((req,res)=>{
 
 module.exports=router;
 
-/**
- {
-    "firstName":"Priyanshi",
-    "lastName":"Gupta",
-    "email":"erfds@gmail.com",
-    "password":"23442123",
-    "courses":[],
-    "notifications":{}
-}
- */

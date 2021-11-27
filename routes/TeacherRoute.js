@@ -2,6 +2,7 @@ const router= require('express').Router();
 const Teacher= require('../models/TeacherModel');
 const nodemailer=require('nodemailer')
 
+//Posting the teacher details on DB
 router.route('/').post((req,res)=>{
     const teacherEntry=req.body;
     const newEntry=new Teacher (teacherEntry);
@@ -11,14 +12,21 @@ router.route('/').post((req,res)=>{
     .catch(err => res.status(400).json('Cannot enter Entry as' + err ));
 });
 
+/*
+Fetching the Teacher details using email given in params.
+*/
 router.route('/:email').get((req,res)=>{
         const Email=req.params.email;   
+
         Teacher.find({email:Email})
         .then(teacher=>res.json(teacher))
         .catch(err => res.status(400).json('Error' + err))
   
 })
 
+/*
+Updating the Teacher data using the email given in params.
+*/
 router.route('/:email').patch((req,res)=>{
     const Email=req.params.email;
     const data=req.body;
@@ -32,6 +40,10 @@ router.route('/:email').patch((req,res)=>{
 })
 
 
+/*
+Reseting the Password of the student by sending OTP to their
+ mail given in body of request same as for student
+*/
 router.route('/resetPassOTP').post(async(req,res)=>{
     const email=req.body.email;
     const OTP=Math.floor(Math.random() * (9999 -1000) + 1000);
@@ -64,7 +76,7 @@ router.route('/resetPassOTP').post(async(req,res)=>{
 })
 
 
-
+//Fetching teacher using the unique id.
 router.route('/:id').get((req,res)=>{
     const id=req.params.id
     Teacher.findById(id)
