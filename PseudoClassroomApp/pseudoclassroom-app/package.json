@@ -1,6 +1,6 @@
 {
   "name": "pseudoclassroom-app",
-  "homepage": ".",
+  "homepage": "https://pseudoclassroom.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

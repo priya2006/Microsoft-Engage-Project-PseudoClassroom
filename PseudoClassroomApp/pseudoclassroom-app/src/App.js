@@ -12,17 +12,16 @@ import TeacherDashboard from './Components/TeacherDashboard';
 
 function App() {
   return (
-    // <Router className="App">
-    //   <Header />
-    //     <Routes >
-    //     <Route path="/" exact element={<Home />} />
-    //     <Route path="/student" element={<Student />} />
-    //     <Route path="/teacher" element={<Teacher />} />
-    //     <Route path="/resetPassword" element={<ForgotPassword />} />
-    //     </Routes>
-    //   <Footer />
-    // </Router>
-    <div>HEllo</div>
+    <Router className="App">
+      <Header />
+        <Routes >
+        <Route path="/" exact element={<Home />} />
+        <Route path="/student" element={<Student />} />
+        <Route path="/teacher" element={<Teacher />} />
+        <Route path="/resetPassword" element={<ForgotPassword />} />
+        </Routes>
+      <Footer />
+    </Router>
   );
 }
 
