@@ -132,7 +132,7 @@ function Profile(props) {
                            Edit 
                        </div>
                    </div>:
-                   <div class="loader"></div>
+                   <div className="loader profile-info"></div>
                }
            </div>
     )
