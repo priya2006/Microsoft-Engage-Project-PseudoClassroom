@@ -4,7 +4,7 @@ This app is to help an **institution, organisations, coachings,** etc.. In which
 ## Link for the Project - 
 https://pseudoclassroom.herokuapp.com/
 
-### Video Demo
+## Video Demo
 
 
 
