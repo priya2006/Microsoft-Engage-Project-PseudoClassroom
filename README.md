@@ -5,7 +5,7 @@ This app is to help an **institution, organisations, coachings,** etc.. In which
 https://pseudoclassroom.herokuapp.com/
 
 ## Video Demo
-[PseudoClassroom Demo]()
+[PseudoClassroom Demo](https://drive.google.com/file/d/1OluxiZYxkCGdelwQbrCcflxhxT7yRgaS/view?usp=sharing)
 
 
 ## Credentials required to logged in to the System -
