@@ -285,49 +285,7 @@ img:hover{
       opacity:0.2;
       height:0.2rem
   }
-  .Notifications-cnt{
-    position: fixed;
-    top:50%;
-    z-index:1;
-    /* overflow-y:scroll; */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50vw;
-    height:calc(100vh - 20%);
-    /* height:calc( 100vh); */
-    background-color:#ffffff;
-    border-radius: 2rem;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-  }
-  .notification-heading{
-    width:80%;
-    height:4rem;
-    margin-top:2rem;
-    position: fixed;
-    top:0.5rem;
-  }
-  .notification-heading>.back-button{
-    float: left;
-    margin-left: 3rem;
-    top:2rem;
-  }
-  .notification-heading>.back-button>i{
-    color:#e9eef3;
-  }
-  .notification-heading>.back-button>i:hover{
-    cursor: pointer;
-    color:#657688;
-  }
-  .notification-heading>.heading{
-      margin-left: 10rem;
-      font-size:1.5rem;
-  }
-  .notification-heading>hr{
-      margin-left: 15rem;
-      width:60%;
-      opacity:0.2;
-      height:0.2rem
-  }
+ 
   .Settings-cnt{
     position: fixed;
     top:50%;

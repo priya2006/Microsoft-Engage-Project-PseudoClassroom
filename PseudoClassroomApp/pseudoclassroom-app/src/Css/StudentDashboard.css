@@ -122,10 +122,11 @@
     top:50%;
     z-index:1;
     /* overflow-y:scroll; */
-    left: 10rem;
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height:calc(100vh - 10%);
+    width: 55vw;
+    height:calc(100vh - 15%);
+    /* height:calc( 100vh); */
     background-color:#ffffff;
     border-radius: 2rem;
     box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
@@ -159,7 +160,6 @@
       opacity:0.2;
       height:0.2rem
   }
-  
 .Courses-cont{
     background-color:#f0f3f7;
     top:3rem;
@@ -408,6 +408,9 @@
   gap:2rem;
   width:100%;
 }
+.notification>pre{
+  overflow:auto
+}
 
 .Notifications>*{
   position: relative;
@@ -415,8 +418,9 @@
   right: 4rem;
   width: 90%;
   border:0.1rem solid #b1b7bd;
-  font-size: 1.3rem;
+  /* font-size: 1.3rem; */
   text-align: center;  
+  
 }
 
 .Notifications>div>div{

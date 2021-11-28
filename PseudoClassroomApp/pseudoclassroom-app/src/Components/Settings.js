@@ -63,7 +63,7 @@ function Settings(props) {
                 
                 <form  onSubmit={ChangePassword}>
                     <div className="head">Change your Password!!</div><br />
-                    <div className="oldPAss">old Password:&nbsp;<input type="password" name="old"  id="pass-old" placeholder="Type here.."/></div>
+                    <div className="oldPAss">Old Password:&nbsp;<input type="password" name="old"  id="pass-old" placeholder="Type here.."/></div>
                     <div className="newPAss">New Password:&nbsp;<input type="password" name="new"  id="pass-new" placeholder="Type here.."/></div>
                     <div className="confirmPAss">Confirm Password:&nbsp;<input type="password" name="confirm"  id='pass-confirm' placeholder="Type here.."/></div>
                    

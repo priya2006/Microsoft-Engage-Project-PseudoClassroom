@@ -62,17 +62,27 @@
 .newPAss{
   margin:1rem;
   padding: 1rem;
-  text-align: center;
+  padding-left: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .oldPAss{
   margin:1rem;
   padding: 1rem;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .confirmPAss{ 
   margin:1rem;
   padding: 1rem;
-  text-align: center;
+  padding-left: 0rem;
+  margin-left:0.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap:2rem;
+  align-items: center;
 }
 .oldPAss>input{
   background-color: #f1f2f6;
