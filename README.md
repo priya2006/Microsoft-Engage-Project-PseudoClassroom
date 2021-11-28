@@ -5,7 +5,7 @@ This app is to help an **institution, organisations, coachings,** etc.. In which
 https://pseudoclassroom.herokuapp.com/
 
 ## Video Demo
-
+[PseudoClassroom Demo]()
 
 
 ## Credentials required to logged in to the System -
@@ -37,6 +37,6 @@ Mail service used is **Nodemailer** for sending OTP on mail for Reset Password, 
 
 
 ## Project Explanation
-Refer to the [README.docs](https://docs.google.com/document/d/157lUzrDhjWW4fxMpES7slgHuUU7WOYR802lrjlf5w20/edit?usp=sharing) to view all the screenshots with the explanation of the working of each Feature. (In case, cann't access link please the file present in the repo)
+Refer to the [README.docs](https://drive.google.com/file/d/1QYBVYLiD_H5pVyvs1xR3Ft5dTnRK4L3B/view?usp=sharing) to view all the screenshots with the explanation of the working of each Feature. (In case, cann't access link please the file present in the repo)
 
       
