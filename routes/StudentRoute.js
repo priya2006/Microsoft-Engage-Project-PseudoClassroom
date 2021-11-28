@@ -47,7 +47,7 @@ router.route('/resetPassOTP').post(async(req,res)=>{
     secure: false, 
     auth: {
       user:" classscheduler.engageproject@gmail.com", // generated mail
-      pass: 'nmdebziiuzeawshv', // generated password for that mail for this transportation
+      pass: 'rvuyjgokgufdxwsh', // generated password for that mail for this transportation
     },
    }) 
    //Sending the mail from us to user mail
