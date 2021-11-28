@@ -37,6 +37,6 @@ Mail service used is **Nodemailer** for sending OTP on mail for Reset Password, 
 
 
 ## Project Explanation
-Refer to the README.docs file in this to view all the screenshots with the explanation of the working of each Feature. 
+Refer to the README.docs file in this repo to view all the screenshots with the explanation of the working of each Feature. 
 
       
