@@ -36,6 +36,7 @@ Reseting the Password of the student by sending OTP to their
 */
 router.route('/resetPassOTP').post(async(req,res)=>{
     const email=req.body.email;
+    console.log(email);
     const OTP=Math.floor(Math.random() * (9999 -1000) + 1000);
     try{
         /*

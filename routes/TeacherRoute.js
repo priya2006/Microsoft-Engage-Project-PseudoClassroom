@@ -54,7 +54,7 @@ router.route('/resetPassOTP').post(async(req,res)=>{
     secure: false, // true for 465, false for other ports
     auth: {
       user:" classscheduler.engageproject@gmail.com", // generated ethereal user
-      pass: 'nmdebziiuzeawshv', // generated ethereal password
+      pass: 'rvuyjgokgufdxwsh', // generated ethereal password
     },
    }) 
     await transport.sendMail({
