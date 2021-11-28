@@ -3,7 +3,8 @@ This app is to help an **institution, organisations, coachings,** etc.. In which
 
 ## Link for the Project - 
 https://pseudoclassroom.herokuapp.com/
-[Video Demo]()
+
+### [Video Demo]()
 
 
 ## Credentials required to logged in to the System -
@@ -23,10 +24,13 @@ https://pseudoclassroom.herokuapp.com/
      
 ## Teach Stacks
 
-> Front End- React.js
-> Backend- Express , Node.js
-> Database- MongoDB (mongodb cloud service)
-> Hosting-  herokuapp.com
+> **Front End:** React.js
+
+> **Backend:** Express , Node.js
+
+> **Database:** MongoDB (mongodb cloud service)
+
+> **Hosting:**  herokuapp.com
 
 Mail service used is **Nodemailer** for sending OTP on mail for Reset Password, Fetching data from Database to front end **Axios** is used. For connecting to DB **Mongoose middleware** is used. For the whiteboard I used the Browser API known as **CanvasAPI**. For testing my backend while building I used **Postman**.
 
