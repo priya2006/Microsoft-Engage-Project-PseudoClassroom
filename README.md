@@ -1,4 +1,4 @@
-# [Pseudo Classroom - Scheduler+Classroom] (https://pseudoclassroom.herokuapp.com/)
+# [Pseudo Classroom - Scheduler+Classroom](https://pseudoclassroom.herokuapp.com/)
 This app is to help an institution, organisations, coachings,etc.. In which of first two portals one for student and other for teacher with their respective authentication and they will be linked by courses which depict that so n so student is enrolled in this course and whose teacher is this one.
 
 ## Link for the Project - 
