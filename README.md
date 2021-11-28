@@ -20,7 +20,7 @@ https://pseudoclassroom.herokuapp.com/
       - **Email:** abcteacher@gmail.com **Password:** 123456789
       - **Email:** xyzteacher@gmail.com **Password:** 123456789
 
-3. In case of the Forgot Password, to see the OTP please use the Gmail account I had created for that whose credentials are 
+3. In case of the Forgot Password, to see the OTP please use the Gmail account I had created for that whose credentials are: 
       - Please refer to the ReadMe Docs file for that as it crucial thing to write here.
      
 ## Teach Stacks
